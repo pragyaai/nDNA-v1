@@ -6,7 +6,7 @@
 
 # nDNA
 
-<img width="950" height="950" alt="image" src="https://github.com/user-attachments/assets/ea0a1618-d6f9-4d77-8c14-ffd8ea31c546" />
+<img width="1100" height="950" alt="image" src="https://github.com/user-attachments/assets/ea0a1618-d6f9-4d77-8c14-ffd8ea31c546" />
 
 This is a cumulative measure of latent geometry, quantifying how a large language model adapts its internal scaffolding to a given corpus. This framework establishes three fundamental metrics that collectively characterize the information processing landscape of Deep Neural Network in modern LLMs.<br>
 
