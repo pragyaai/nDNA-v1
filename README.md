@@ -11,13 +11,13 @@
 
 This is a cumulative measure of latent geometry, quantifying how a large language model adapts its internal scaffolding to a given corpus. This framework establishes three fundamental metrics that collectively characterize the information processing landscape of Deep Neural Networks in modern LLMs.<br>
 
-**► 1. _Spectral Curvature_ ($κ_{\ell}$)**: Quantifies geometric properties of the parameter manifold <br><br>
-**► 2. _Thermodynamic Length_ ($L_{\ell}$)**: Measures information processing complexity via Fisher-Rao distances <br><br>
+**► 1. _Spectral Curvature_** ($\kappa_{\ell}$): Quantifies geometric properties of the parameter manifold <br><br>
+**► 2. _Thermodynamic Length_** ($L_{\ell}$): Measures information processing complexity via Fisher-Rao distances <br><br>
 **► 3. _Belief Vector Field_**: Captures epistemic confidence and uncertainty propagation <br><br>
 
 The **Spectral Curvature (κℓ)** captures geometry, **Thermodynamic length(Lℓ)** captures latent movement, and **Belief Vector Field** quantifies alignment strength of the model.
 
-## ► 1. Spectral Curvature ($κ_{\ell}$) <br>
+## ► 1. Spectral Curvature ($\kappa_{\ell}$) <br>
 
 A ramp-up of the Power-Law exponent will increase latent binding in higher decoder layers, signalling sharper representational semantics. Spectral Curvature at layer $\ell$ is defined as:
 
