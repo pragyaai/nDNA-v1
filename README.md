@@ -11,15 +11,15 @@
 
 This is a cumulative measure of latent geometry, quantifying how a large language model adapts its internal scaffolding to a given corpus. This framework establishes three fundamental metrics that collectively characterize the information processing landscape of Deep Neural Networks in modern LLMs.<br>
 
-**► 1. _Spectral Curvature_ ($$κ_{\ell}$$)**: Quantifies geometric properties of the parameter manifold <br><br>
-**► 2. _Thermodynamic Length_ ($$L_{\ell}$$)**: Measures information processing complexity via Fisher-Rao distances <br><br>
+**► 1. _Spectral Curvature_ ($κ_{\ell}$)**: Quantifies geometric properties of the parameter manifold <br><br>
+**► 2. _Thermodynamic Length_ ($L_{\ell}$)**: Measures information processing complexity via Fisher-Rao distances <br><br>
 **► 3. _Belief Vector Field_**: Captures epistemic confidence and uncertainty propagation <br><br>
 
 The **Spectral Curvature (κℓ)** captures geometry, **Thermodynamic length(Lℓ)** captures latent movement, and **Belief Vector Field** quantifies alignment strength of the model.
 
-## ► 1. Spectral Curvature ($$κ_{\ell}$$) <br>
+## ► 1. Spectral Curvature ($κ_{\ell}$) <br>
 
-A ramp-up of the Power-Law exponent will increase the Latent Binding in higher decoder layers, signalling sharper representational semantics. Spectral Curvature at layer $\ell$ is defined as:
+A ramp-up of the Power-Law exponent will increase latent binding in higher decoder layers, signalling sharper representational semantics. Spectral Curvature at layer $\ell$ is defined as:
 
 $$
 \kappa_\ell := \big\| \Delta^2 h_\ell \big\| = \big\| h_{\ell+1} - 2 h_\ell + h_{\ell-1} \big\|
@@ -35,19 +35,19 @@ where $s$ parameterizes depth through the network. Discrete $\kappa_\ell$ provid
 
 <p align="center">
   <a href="[src="https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/spectral_curvature_llama_ndna_animation.gif"](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/spectral_curvature_llama_ndna_animation.gif)">
-    <img src="assets/spectral_curvature_llama_ndna_animation.gif" width="1000" height="850" />
+    <img src="assets/spectral_curvature_llama_ndna_animation.gif" /> <!-- width="1000" height="850" /> -->
   </a>
 </p>
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/thermodynamic_length.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/spectral_curvature.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/spectral_curvature.gif))">
-    <img src="assets/spectral_curvature.gif" width="1000" height="850" />
+    <img src="assets/spectral_curvature.gif"/> <!-- width="1000" height="850" /> -->
   </a>
 </p>
 
-## ► 2. Thermodynamic length ($$L_{\ell}$$)  <br> 
+## ► 2. Thermodynamic length ($L_{\ell}$)  <br> 
 
-It is defined by Fisher geometry that quantifies the semantic effort needed to move a token from layer($$\ell$$) to layer ($$\ell$$+1). Thermodynamic length offers a window onto the model’s "latent energy budget" — illuminating how internal belief states reshape to meet complexity, constraint, and context.
+It is defined by Fisher geometry, which quantifies the semantic effort required to move a token from one layer ($\ell$) to the next layer ($\ell$+1). Thermodynamic length offers a window into the model’s "latent energy budget," illuminating how internal belief states adapt to meet complexity, constraint, and context.
 
 ---
 
@@ -67,17 +67,17 @@ $$
 = |\mathcal{D}| \, \mathbb{E}_{x \sim \mathcal{D}} \big\| \nabla_\theta \log p_\ell(x) \big\|^2
 $$
 
-This formulation reveals that $$L_\ell$$ captures both the *average local effort* and its scaling with dataset size. Here $$h_\ell$$ denotes latent trajectories at layer $\ell$, $$G_{\mathrm{Fisher}}$$ is the Fisher information metric, and $$s$$ is the arc length along $\gamma_\ell$. Thus, $\mathcal{L}_\ell$ can be seen as an *energy integral over the belief manifold* — capturing how much *"heat"* or computational work is generated to reconcile prior belief state with new input at depth $\ell$.
+This formulation reveals that $L_\ell$ captures both the *average local effort* and its scaling with dataset size. Here $h_\ell$ denotes latent trajectories at layer $\ell$, $G_{\mathrm{Fisher}}$ is the Fisher information metric, and $s$ is the arc length along $\gamma_\ell$. Thus, $\mathcal{L}_\ell$ can be seen as an *energy integral over the belief manifold* — capturing how much *"heat"* or computational work is generated to reconcile prior belief state with new input at depth $\ell$.
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/thermodynamics_interactive.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/Final_thermodynamic_length.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/Final_thermodynamic_length.gif))">
-    <img src="assets/Final_thermodynamic_length.gif" width="1000" height="850" />
+    <img src="assets/Final_thermodynamic_length.gif" /> <!--width="1000" height="850" />-->
   </a>
 </p>
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/thermodynamic_length.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/thermodynamic_length.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/thermodynamic_length.gif))">
-    <img src="assets/thermodynamic_length.gif" width="1000" height="850" />
+    <img src="assets/thermodynamic_length.gif" /> <!-- width="1000" height="850" /> -->
   </a>
 </p>
 
@@ -87,31 +87,32 @@ $$
 \mathcal{L}_{\ell} = \int_{\gamma_{\ell}} \left\langle \frac{d h_{\ell}}{d s}, \mathcal{G}_{\text{Fisher}}(h_{\ell}) \frac{d h_{\ell}}{d s} \right\rangle d s
 $$
 
-where $$h_{\ell}$$ denotes latent trajectories at layer $$\ell$$, $$G_{\text{Fisher}}$$ the Fisher information metric, and s arc length along $$\gamma_{\ell}$$. Thus, $$L_{\ell}$$ can be seen as an *energy integral over the belief manifold* – capturing how much internal *"heat"* or computational work is generated to reconcile prior belief state with new input at depth $$\ell$$.
+where $$h_{\ell}$$ denotes latent trajectories at layer $\ell$, $G_{\text{Fisher}}$ the Fisher information metric, and s arc length along $\gamma_{\ell}$. Thus, $L_{\ell}$ can be seen as an *energy integral over the belief manifold* – capturing how much internal *"heat"* or computational work is generated to reconcile prior belief state with new input at depth $\ell$.
 
 
-It quantifies the epistemic work performed across transformer layers, calculated as the cumulative squared gradient norm of layerwise log-likelihoods. Higher values signal internal resistance–zones of significant restructuring, belief compression, or negotiation of conflicting priors. In culturally fine-tuned models, these peaks localize to upper decoder layers, indicating intense adaptation near output-generating blocks. Within the nDNA construct, **$$L_{\ell}$$** helps reveal latent epistemic effort that underlies surface-level behavior. This metric thus provides a nuanced window into where and how models internally allocate effort during learning and inference. <br><br>
+It quantifies the epistemic work performed across transformer layers, calculated as the cumulative squared gradient norm of layerwise log-likelihoods. Higher values signal internal resistance–zones of significant restructuring, belief compression, or negotiation of conflicting priors. In culturally fine-tuned models, these peaks localize to upper decoder layers, indicating intense adaptation near output-generating blocks. Within the nDNA construct, **$L_{\ell}$** helps reveal latent epistemic effort that underlies surface-level behavior. This metric thus provides a nuanced window into where and how models internally allocate effort during learning and inference. <br><br>
 
 ## ► 3. Belief Vector Field  <br>
 In **differential geometry** and **physics**, a *vector field* describes a directional force applied at each point of a space. Inspired by this, the **Belief Vector Field** models the *directional semantic force* that a specific culture or value system exerts on a model’s latent representations. It encodes *where*, *how strongly*, and *in what direction* cultural priors act within the model’s internal geometry—functioning as a **semantic compass** through the latent manifold.<br>
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/belief_vector_field.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/belief_vector_field.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/belief_vector_field.gif))">
-    <img src="assets/Final_belief_vector_field.gif" width="1100" height="900" />
+    <img src="assets/Final_belief_vector_field.gif" /> <!-- width="1100" height="900" /> -->
   </a>
 </p>
 
 <p align="center">
-  <img src="assets/belief_vector_field_healthy_static_annotated.png" width="900" height="1200" alt="Belief Vector Field" />
+  <img src="assets/belief_vector_field_healthy_static_annotated.png" alt="Belief Vector Field" />
+  <!-- <img src="assets/belief_vector_field_healthy_static_annotated.png" width="900" height="1200" alt="Belief Vector Field" /> -->
 </p>
 
 # The Fingerprint
-
-<img width="1276" height="663" alt="image" src="https://github.com/user-attachments/assets/a4be9afd-cac8-4aba-ae3a-10216dacb4a0" />
+<img alt="image" src="https://github.com/user-attachments/assets/a4be9afd-cac8-4aba-ae3a-10216dacb4a0" />
+<!--<img width="1276" height="663" alt="image" src="https://github.com/user-attachments/assets/a4be9afd-cac8-4aba-ae3a-10216dacb4a0" />-->
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/thermodynamic_length.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/ndna_refined_story.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/ndna/ndna_refined_story.gif))">
-    <img src="assets/ndna_refined_story.gif" width="1200" height="950" />
+    <img src="assets/ndna_refined_story.gif" /> <!-- width="1200" height="950" /> -->
   </a>
 </p>
 
@@ -150,7 +151,7 @@ Throughout our work, we used the following foundational LLMs to prove our hypoth
 
 <p align="center">
   <a href="[https://pragyaai.github.io/ndna/belief_vector_field.html]([https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/gifs/15_llms/all.gif](https://cdn.jsdelivr.net/gh/pragyaai/cdn-assets/assets/gifs/15_llms/all.gif))">
-    <img src="assets/all_LLms.gif" width="1200" height="1000" />
+    <img src="assets/all_LLms.gif" /> <!-- width="1200" height="1000" /> -->
   </a>
 </p>
 
