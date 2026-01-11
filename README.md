@@ -2,23 +2,21 @@
   <img src="https://github.com/user-attachments/assets/e093b2ec-4918-4622-a3c0-7d86d8e98db3" alt="ndna_logo_v5.jpg" width="1600" />
 </p>
 
-# <p align="center" target="_blank"> The Semantic Helix of Artificial Cognition <div align="center" target="_blank"> [![Webpage](https://img.shields.io/badge/🌐_Webpage-0078E7?style=for-the-badge&logo=google-chrome&logoColor=white)](https://pragyaai.github.io/ndna/llm/ndna/)   [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/playlist?list=PLaE3N7Ax00P93HC0jxZ-b6c4tnLkldPOJ)   [![ArXiv](https://img.shields.io/badge/ArXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2509.18216) </div> </p>
-
 # nDNA
 
-<img width="1100" height="950" alt="image" src="https://github.com/user-attachments/assets/ea0a1618-d6f9-4d77-8c14-ffd8ea31c546" />
+<img alt="image" src="https://github.com/user-attachments/assets/ea0a1618-d6f9-4d77-8c14-ffd8ea31c546" />
 
-This is a cumulative measure of latent geometry, quantifying how a large language model adapts its internal scaffolding to a given corpus. This framework establishes three fundamental metrics that collectively characterize the information processing landscape of Deep Neural Network in modern LLMs.<br>
+This is a cumulative measure of latent geometry, quantifying how a large language model adapts its internal scaffolding to a given corpus. This framework establishes three fundamental metrics that collectively characterize the information processing landscape of Deep Neural Networks in modern LLMs.<br>
 
 **► 1. _Spectral Curvature_ ($$κ_{\ell}$$)**: Quantifies geometric properties of the parameter manifold <br><br>
 **► 2. _Thermodynamic Length_ ($$L_{\ell}$$)**: Measures information processing complexity via Fisher-Rao distances <br><br>
 **► 3. _Belief Vector Field_**: Captures epistemic confidence and uncertainty propagation <br><br>
 
-The **Spectral Curvature (κℓ)** capture geometry, **Thermodynamic length(Lℓ)** captures latent movement, and **Belief Vector Field** quantifies alignment strength of the model.
+The **Spectral Curvature (κℓ)** captures geometry, **Thermodynamic length(Lℓ)** captures latent movement, and **Belief Vector Field** quantifies alignment strength of the model.
 
 ## ► 1. Spectral Curvature ($$κ_{\ell}$$) <br>
 
-A ramp up of Power-Law exponent will increase the Latent Binding in higher decoder layers, signaling sharper representational semantics. Spectral Curvature at layer $\ell$ is defined as:
+A ramp-up of the Power-Law exponent will increase the Latent Binding in higher decoder layers, signalling sharper representational semantics. Spectral Curvature at layer $\ell$ is defined as:
 
 $$
 \kappa_\ell := \big\| \Delta^2 h_\ell \big\| = \big\| h_{\ell+1} - 2 h_\ell + h_{\ell-1} \big\|
@@ -46,7 +44,7 @@ where $s$ parameterizes depth through the network. Discrete $\kappa_\ell$ provid
 
 ## ► 2. Thermodynamic length ($$L_{\ell}$$)  <br> 
 
-It is defined by Fisher geometry that quantifies semantic effort needed to move a token from layer($$\ell$$) to layer ($$\ell$$+1). Thermodynamic length offers a window onto the model’s "latent energy budget" — illuminating how internal belief states reshape to meet complexity, constraint, and context.
+It is defined by Fisher geometry that quantifies the semantic effort needed to move a token from layer($$\ell$$) to layer ($$\ell$$+1). Thermodynamic length offers a window onto the model’s "latent energy budget" — illuminating how internal belief states reshape to meet complexity, constraint, and context.
 
 ---
 
